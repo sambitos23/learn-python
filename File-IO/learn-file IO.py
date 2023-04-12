@@ -1,5 +1,5 @@
 # Read file
-f = open('f-string.py', 'r')
+f = open('../f-string.py', 'r')
 print(f)
 text = f.read()
 print(text)
