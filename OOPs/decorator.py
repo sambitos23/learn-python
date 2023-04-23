@@ -32,8 +32,8 @@ def add(a, b):
 add(2, 4)
 
 # ============== #
-
 import logging
+
 
 def log_function_call(func):
     def decorated(*args, **kwargs):
