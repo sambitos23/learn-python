@@ -36,23 +36,41 @@ def check_score(score, point):
     return point
 
 
-print("You have 3 chance to win the game: ")
-point = 0
-for index in range(3):
-    print(f"This is your {index+1} turn")
-    comp = random.randint(0, 2)
-    user = int(input("0 for Paper \n1 for Rock \n2 for Scissors \n"))
-
-    score = check(comp, user)
-    print("\nYou: ", check_value(user))
-    print("Computer: ", check_value(comp))
-
-    point = check_score(score, point)
+def retry():
+    user = int(input("\nWanted to play more?\nPress 1 to retry\nPress 0 for exit the game\n"))
+    if user == 1:
+        play()
+    else:
+        print("\nThanks for your time")
+        return 0
 
 
-if point < 0:
-    print("\nSorry, You lost the game..... pls try again\nTotal point: ", point)
-elif point == 0:
-    print("\nSorry, It's a draw.... pls try again\nTotal point: ", point)
-else:
-    print("\nCongratulations, you won the game\nTotal point: ", point)
+def play():
+    print("You have 3 chance to win the game: ")
+    point = 0
+    for index in range(3):
+        print(f"This is your {index + 1} turn")
+        comp = random.randint(0, 2)
+        user = int(input("0 for Paper \n1 for Rock \n2 for Scissors \n4 for quit the Game\n"))
+
+        if user == 4:
+            break
+
+        score = check(comp, user)
+        print("\nYou: ", check_value(user))
+        print("Zozo the bot: ", check_value(comp))
+
+        point = check_score(score, point)
+
+    if point < 0:
+        print("\nSorry, You lost the game..... pls try again\nTotal point: ", point)
+        retry()
+    elif point == 0:
+        print("\nSorry, It's a draw.... pls try again\nTotal point: ", point)
+        retry()
+    else:
+        print("\nCongratulations, you won the game\nTotal point: ", point)
+        retry()
+
+
+play()

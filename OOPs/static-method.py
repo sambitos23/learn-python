@@ -6,8 +6,8 @@ class Math:
         self.num = self.num + n
 
     @staticmethod  # don't add to add self
-    def add(a, b):
-        return a + b
+    def add(num1, num2):
+        return num1 + num2
 
 
 result = Math.add(1, 2)
