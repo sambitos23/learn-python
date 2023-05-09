@@ -4,4 +4,4 @@ text_list = ["Hello Sambit", "Good Morning", "How are you", "I think everything 
 
 for text in text_list:
     print(text)
-    system(f"espeak '{text}'")
+    system(f"espeak -v en-us '{text}'")
