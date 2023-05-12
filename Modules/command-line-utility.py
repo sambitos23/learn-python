@@ -31,3 +31,7 @@ print(args.url)
 print(args.output)
 
 download_file(args.url, args.output)
+
+
+# To run this code, go to terminal and run
+# python3 command-line-utility.py https://imagej.net/images/2D_Gel.jpg -o sambit.jpg
